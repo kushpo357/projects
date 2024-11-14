@@ -1,0 +1,66 @@
+flowchart TD
+    subgraph User_Input["User Input"]
+        direction TB
+        A1["Input through URL (website scraping)"]
+        A2["PDF upload"]
+        A3["Display option for business product details"]
+    end
+
+    subgraph Backend_Processing["Backend Processing"]
+        direction TB
+        B1["Data Extraction"]
+        B1A["Web scraping (Puppeteer)"]
+        B1B["PDF data extraction (pdf-lib)"]
+        B2["Data Storage"]
+        B2A["MongoDB (compliance data & user profiles)"]
+        B2B["Typesense (fast search)"]
+        B3["AI Processing"]
+        B3A["ChatGPT 2 (summarize & analyze regulations)"]
+    end
+
+    subgraph AI_Data_Insights["AI & Data Insights"]
+        direction TB
+        C1["Summary of regulations and incentives"]
+        C2["Real-time, personalized insights"]
+    end
+
+    subgraph Frontend["Frontend"]
+        direction TB
+        D1["User Interface"]
+        D1A["Tailwind CSS (responsive design)"]
+        D1B["ReactJS (display insights & data)"]
+        D2["Browser Plugin"]
+        D2A["Chrome Extensions API (data extraction)"]
+    end
+
+    subgraph Security_Authentication["Security & Authentication"]
+        direction TB
+        E1["Firebase Authentication (user roles & login)"]
+        E2["HTTPS (secure data transfer)"]
+    end
+
+    subgraph Hosting_Cloud["Hosting & Cloud"]
+        direction TB
+        F1["Vercel (frontend hosting)"]
+        F2["Render (backend hosting)"]
+        F3["Supabase (auth & storage)"]
+    end
+
+    subgraph Future_Scalability["Future Scalability"]
+        direction TB
+        G1["Potential Migration to PostgreSQL"]
+        G2["Upgrade to microservices & GraphQL"]
+        G3["Future Upgrades"]
+        G3A["Integrate GPT-4"]
+        G3B["Support for large-scale scraping (Scrapy)"]
+    end
+
+    %% Define Flow Connections
+    User_Input --> Backend_Processing
+    Backend_Processing --> AI_Data_Insights
+    AI_Data_Insights --> Frontend
+    Frontend -->|User interactions| Security_Authentication
+    Backend_Processing --> Security_Authentication
+    Security_Authentication --> Hosting_Cloud
+    Hosting_Cloud --> Future_Scalability
+
