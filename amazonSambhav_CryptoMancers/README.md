@@ -1,4 +1,4 @@
 # Amazon Sambhav
 
 Please use the follow link for the mermaid flow diagram.
-[website](mermaid.live/)
+[website](https://www.mermaid.live/)
